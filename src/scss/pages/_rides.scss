@@ -1,0 +1,65 @@
+// -----------------------------------------------------------------------------
+// This file contains styles that are specific to the rides page.
+// -----------------------------------------------------------------------------
+
+.button-show-more {
+  color: inherit;
+  cursor: pointer;
+  outline: none;
+  user-select: none;
+  -moz-appearance: none;
+  text-decoration: none;
+  -webkit-appearance: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.details-rides {
+  color: $medium-black;
+  font-size: $text-size-default - 0.25rem;
+  font-family: $text-font-stack;
+  line-height: 1.46429em;
+  margin-bottom: 0.35em;
+}
+
+.box-gray {
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: $height-regular - 2px;
+  display: flex;
+  position: absolute;
+  background: rgba(0, 0, 0, 0.5);
+  align-items: center;
+  font-family: $text-font-stack;
+}
+
+.text-gray-img {
+  overflow: hidden;
+  font-size: 1rem;
+  line-height: 24px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.text-title-card {
+  color: $medium-black;
+  font-size: 1.3125rem;
+  font-weight: $text-weight-default - 100;
+  font-family: $text-font-stack;
+  line-height: 1.16667em;
+}
+
+.button-arrow-down {
+  flex: 0 0 auto;
+  color: rgba(0, 0, 0, 0.54);
+  padding: 12px;
+  overflow: visible;
+  font-size: 1.5rem;
+  transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+}
+
+@media (max-width: 991px) {
+  .menu-info {
+    display: none !important;
+  }
+}

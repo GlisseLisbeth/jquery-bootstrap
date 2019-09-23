@@ -1,0 +1,24 @@
+// -----------------------------------------------------------------------------
+// When having several themes, this file contains everything related to the
+// default one.
+// -----------------------------------------------------------------------------
+.bg-blue {
+  background-color: $brand-color-primary;
+}
+
+.bg-gray {
+  background-color: $brand-color-secondary;
+}
+
+.bg-cyan {
+    background-color: $brand-color-tertiary !important;
+}
+
+.text-blue {
+  color: $text-color-secondary;
+}
+
+
+.h-50px {
+  height: $height-regular;
+}

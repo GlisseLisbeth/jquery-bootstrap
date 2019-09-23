@@ -1,0 +1,104 @@
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass variables.
+// -----------------------------------------------------------------------------
+
+
+/// Regular font family
+/// @type List
+$text-font-stack: "Roboto","Helvetica",Arial,sans-serif !default;
+
+/// Copy text color primary
+/// @type Color
+$text-color-primary: rgb(33, 37, 41) !default;
+
+/// Copy text color secondary
+/// @type Color
+$text-color-secondary: rgb(2, 117, 216) !default;
+
+/// Main brand color primary
+/// @type Color
+$brand-color-primary: rgb(2, 117, 216) !default;
+
+/// Main brand color secondary
+/// @type Color
+$brand-color-secondary: rgb(119, 119, 119) !default;
+
+/// Main brand color tertiary
+/// @type Color
+$brand-color-tertiary: rgb(23, 162, 184) !default;
+
+/// Light grey
+/// @type Color
+$light-grey: rgb(237, 237, 237) !default;
+
+/// Medium grey
+/// @type Color
+$mid-grey: rgb(153, 153, 153) !default;
+
+/// Dark grey
+/// @type Color
+$dark-grey: rgb(119, 119, 119) !default;
+
+/// White
+/// @type Color
+$white: rgb(255, 255, 255) !default;
+
+///Light white 
+/// @type color
+$light-white: rgb(238, 238, 238) !default;
+
+/// Light black
+/// @type Color
+$light-black: rgba(0, 0, 0, 0.2) !default;
+
+/// Medium black
+/// @type Color
+$medium-black: rgba(0, 0, 0, 0.87) !default;
+
+/// Dark black
+/// @type Color
+$dark-black: rgb(0, 0, 0) !default;
+
+///Text size
+/// @type Size
+$text-size-default:  1rem !default; //16px
+$text-size-medium:  0.75rem !default; //12px
+
+///Padding
+/// @type Size
+$padding-default:  8px !default; 
+
+///Text weight
+/// @type Weight
+$text-weight-default: 400 !default;
+
+///Spacing text
+/// @type Spacing
+$text-spacing-default: 1.5 !default;
+
+///Height text
+/// @type Height
+$height-regular: 50px !default;
+$height-medium: 32px !default;
+
+/// Container's maximum width
+/// @type Length
+$max-width: 1180px !default;
+
+/// Breakpoints map
+/// @prop {String} keys - Keys are identifiers mapped to a given length
+/// @prop {Map} values - Values are actual breakpoints expressed in pixels
+$breakpoints: (
+  'small': 320px,
+  'medium': 768px,
+  'large': 1024px,
+) !default;
+
+
+
+
+/// Relative or absolute URL where all assets are served from
+/// @type String
+/// @example scss - When using a CDN
+///   $base-url: 'http://cdn.example.com/assets/';
+$base-url: '/assets/' !default;
