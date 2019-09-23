@@ -22,3 +22,12 @@
 .h-50px {
   height: $height-regular;
 }
+
+%cf:before,
+%cf:after {
+    content: " ";
+    display: table;
+}
+%cf:after {
+    clear: both;
+}

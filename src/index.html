@@ -26,19 +26,27 @@
                    src="https://res.cloudinary.com/cowboytrailrides/image/upload/c_scale,e_auto_contrast,w_49/v1494699678/baner-1_lwemw6.png"
                    alt="logo">
             </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            <button class="navbar-mobile navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
+              <span class="border-none-icon">
+                  <svg class="icon-img" focusable="false" viewBox="0 0 24 24" aria-hidden="true" role="presentation" style="color: white;"><path fill="none" d="M0 0h24v24H0z"></path><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path></svg>
+              </span>
             </button>
-            <div class="collapse navbar-collapse h-50px" id="navbarNav">
-              <ul class="navbar-nav h-100">
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <div class="box-menu position-relative">
+                  <ul class="primary-nav with-indicator">
+                      <li class="nav-item"><a class="nav-link" href="#">Rides</a></li>
+                      <li class="nav-item"><a class="nav-link" href="#">Checkout</a></li>
+                    </ul>
+              </div>
+              <!-- <ul class="navbar-nav h-100 nav-indicator">
                 <li class="nav-item active">
                   <a class="nav-link nav-menu h-100 d-flex justify-content-center align-items-center px-3 text-white" href="#">Rides<span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link nav-menu h-100 d-flex justify-content-center align-items-center px-3 text-white" href="#">Check out</a>
+                  <a class="nav-link nav-menu undr-line h-100 d-flex justify-content-center align-items-center px-3 text-white" href="#">Check out</a>
                 </li>
-              </ul>
+              </ul> -->
             </div>
         </nav>
         <div id="info" class="menu-info d-flex bg-gray h-100 px-5 py-0 shadow-menu col-md-12">
@@ -111,7 +119,7 @@
                           </svg>
                         </div>
                         <div class="w-30 text-right">
-                          <button tabindex="0" class="bg-primary btn-sm bg-blue rounded" type="button">
+                          <button tabindex="0" class="btn-default bg-primary btn-sm bg-blue rounded" type="button">
                             <span class="text-white font-weight-bold text-capitalize">buy it now</span>
                           </button>
                         </div>
@@ -120,7 +128,7 @@
                     <div class="box-img-ride position-relative">
                       <img
                         src="https://res.cloudinary.com/cowboytrailrides/image/upload/v1512804484/ctrws/products/heroImage/ta5qpuofdlzp8hk620k8.jpg"
-                        class="card-img-top" alt="img-1">
+                        class="card-img" alt="img-1">
                       <div class="box-gray">
                         <div class="text-white overflow-hidden mx-3">
                           <div class="text-gray-img overflow-hidden">Red Rock Camp - 5 Hours - Monday to Friday. Call x

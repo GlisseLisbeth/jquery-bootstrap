@@ -1,37 +1,166 @@
 // -----------------------------------------------------------------------------
 // This file contains all styles related to the header of the site/application.
 // -----------------------------------------------------------------------------
-.nav-menu {
-    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
-    font-weight: $text-weight-default + 100;
-    line-height: 1.16667em;
-    cursor: pointer;
-    font-size: $text-size-default + .125rem;
+.navbar-mobile {
+  border-color: transparent !important;
+}  
+.border-none-icon {
+  color: $white;
+}
+.box-menu {
+  width: 25%;
+  height: 50px;
+}
+// How many menu items do we have?
+$menu-items: 2;
+
+// Colours
+$indicator-color: #eeeeee;
+
+// Transition Speed
+$transition-speed: 1.3s;
+
+// Dynamic Variables
+$width: (100/$menu-items) * 1%; 
+$menu-items-loop-offset: $menu-items - 1; 
+
+// ======================================================
+// Step 1 - Making a Fixed Width Navigation
+// ======================================================
+
+.primary-nav {
+  @extend %cf; // clear the floats
+  list-style: none;
+  max-width: 400px; // As all measurements are using % this could be a flexible value.
+  padding: 0;
+  width: 100%;
+}
+
+.nav-item {
+  background: $brand-color-primary;
+  display: block;
+  float: left;
+  margin: 0;
+  padding: 0;
+  width: $width; //dynamic width
+  text-align: center;
+
+  &.is-active a {
+    color: $indicator-color;
   }
-  
-  .shadow-menu {
-    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 2px 1px -1px rgba(0, 0, 0, 0.12);
+
+  a {
+    color: $light-white;
+    display: block;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-decoration: none;
+    font-size: 18px;
+
+    &:hover {
+      color: $indicator-color;
+      font-weight: bold;
+    }
   }
-  .active {
-    border-bottom: 3px solid $light-white;
+}
+
+.with-indicator {
+  position: relative;
+  z-index: 0;
+
+  .nav-item {
+    &:last-child {
+      &:before, &:after {
+        content: '';
+        display: block;
+        position: absolute;
+        pointer-events: none;
+        transition: left #{$transition-speed} ease;
+      }
+       &:before {
+        left: ($width/2);
+        margin-left: -3px;
+      }
+      &:after {
+        position:absolute;
+        background: #eeeeee;
+        top: 0px;
+        bottom: -6px;
+        left: 0;
+        width: $width;
+        z-index: -1;
+      }
+
+
+    }
+
   }
-  
-  /* ==========================================================================
-     Menu info
-     ========================================================================== */
-  
-  .menu-info {
-    background-color: $dark-grey;
-    font-size: $text-size-default;
-    height: $height-medium !important;
+
+  @for $i from 1 through $menu-items-loop-offset {
+    .nav-item:nth-child(#{$i}).is-active ~ .nav-item:last-child:after {
+      left:($width*$i)-$width;
+    }
+    .nav-item:nth-child(#{$i}).is-active ~ .nav-item:last-child:before
+    {
+      left:($width*$i)+($width/2)-$width; 
+    }
+}
+
+    @for $i from 1 through $menu-items-loop-offset {
+    .nav-item:nth-child(#{$i}):hover ~ .nav-item:last-child:after {
+      left:($width*$i)-$width !important;
+    }
+
+    .nav-item:nth-child(#{$i}):hover ~ .nav-item:last-child:before{
+      left:($width*$i)+($width/2)-$width !important;
+    }
+      
   }
-  .icon-img {
-    fill: currentColor;
-    width: 1em;
-    height: 1em;
-    display: inline-block;
-    font-size: $text-size-medium*2;
-    transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
-    user-select: none;
-    flex-shrink: 0;
+    
+  .nav-item {
+        &:last-child {
+          &:hover, &.is-active {
+            &:before {
+              left: (100%-$width)+($width/2) !important;
+            }
+            &:after{
+              left: 100%-$width !important;
+            }
+          }        
+        }
+    }
+
+}
+/* ==========================================================================
+    Menu info
+========================================================================== */
+
+.menu-info {
+  background-color: $dark-grey;
+  font-size: $text-size-default;
+  height: $height-medium !important;
+}
+.icon-img {
+  fill: currentColor;
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  font-size: $text-size-medium * 2;
+  transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  user-select: none;
+  flex-shrink: 0;
+}
+
+@media (max-width: 991px) {
+  $menu-items: 1;
+  .nav-item {
+    width: 50%;  
   }
+  .box-menu {
+    width: 100%;
+  }
+  .text-gray-img {
+    font-size: $text-size-medium;
+    white-space: normal;
+  }
+}
